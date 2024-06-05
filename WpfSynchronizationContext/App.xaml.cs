@@ -1,6 +1,4 @@
 ﻿// Ignore Spelling: App
-using System.Configuration;
-using System.Data;
 using System.Text;
 using System.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;

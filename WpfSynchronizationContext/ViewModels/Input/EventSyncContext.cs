@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace WpfSynchronizationContext.ViewModels.Input
+﻿namespace WpfSynchronizationContext.ViewModels.Input
 {
    /// <summary> Контекст синхронизации потоков события. </summary>
    /// <typeparam name="THandler"> Делегат, определяющий метод обработки события. </typeparam>

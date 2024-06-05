@@ -1,9 +1,12 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 
 namespace WpfSynchronizationContext.ViewModels.Input
 {
+   /// <summary>
+   /// 
+   /// </summary>
+   /// <remarks> См. <see href="https://www.cyberforum.ru/csharp-net/thread2947941.html#post16080545">Элд Хасп, "Исполнение делегатов обобщённого типа"</see>. </remarks>
    public class RelayCommandSyncContext : ICommand, IRelayCommand
    {
       #region Fields
@@ -82,7 +85,7 @@ namespace WpfSynchronizationContext.ViewModels.Input
 
       #region Implementation of IRelayCommand
 
-      /// <summary>  </summary>
+      /// <summary> Метод, подымающий событие <see cref="CanExecuteChanged"/>. </summary>
       public void NotifyCanExecuteChanged()
       {
          _canExecuteChangedSyncContext?.Invoke();

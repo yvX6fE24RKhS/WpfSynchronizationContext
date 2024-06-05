@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfSynchronizationContext.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSynchronizationContext.Views"
+        xmlns:converters="clr-namespace:WpfSynchronizationContext.Auxiliary.Converters"
+        xmlns:viewmodels="clr-namespace:WpfSynchronizationContext.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        Title="MainView" Height="100" Width="100"
+        >
+   <Window.Resources>
+      <converters:BoolToFillColorConverter x:Key="BoolToFillColorConverter" />
+      <converters:BoolToToolTipConverter x:Key="BoolToToolTipConverter" />
+   </Window.Resources>
+   
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Button Grid.Row="0" Content="Connect" Command="{Binding ConnectCommand}" />
+      <Button Grid.Row="1" Content="DisConnect" Command="{Binding DisconnectCommand}" />
+      <Ellipse Grid.Row="2" 
+               Fill="{Binding Path=IsConnected, Converter={StaticResource BoolToFillColorConverter}}"
+               ToolTip="{Binding Path=IsConnected, Converter={StaticResource BoolToToolTipConverter}}"
+               Height="12" Width="12"
+               />
+   </Grid>
+</Window>
